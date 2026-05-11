@@ -1,0 +1,73 @@
+type UserRole = 
+ variant {
+   admin;
+   guest;
+   user;
+ };
+type UserId = principal;
+type Timestamp = int;
+type SubmitRequest = 
+ record {
+   classCourse: text;
+   enrollmentNumber: text;
+   principalName: text;
+   projectType: ProjectType;
+   rollNumber: text;
+   studentName: text;
+   teacherName: text;
+ };
+type SubmissionStatus = 
+ variant {
+   completed;
+   in_progress;
+   ready_for_pickup;
+   submitted;
+ };
+type SubmissionPublic = 
+ record {
+   adminNotes: text;
+   classCourse: text;
+   currentStatus: SubmissionStatus;
+   enrollmentNumber: text;
+   id: SubmissionId;
+   principalName: text;
+   projectType: ProjectType;
+   rollNumber: text;
+   statusHistory: vec StatusEntry;
+   studentName: text;
+   studentPrincipal: UserId;
+   submittedAt: Timestamp;
+   teacherName: text;
+ };
+type SubmissionId = nat;
+type StatusEntry = 
+ record {
+   status: SubmissionStatus;
+   timestamp: Timestamp;
+ };
+type ProjectType = 
+ variant {
+   graduation_pdf_binding;
+   graduation_pdf_only;
+   tenth_twelfth_handwritten;
+ };
+type Charge = 
+ record {
+   amount: nat;
+   description: text;
+   projectType: ProjectType;
+ };
+service : {
+  _initializeAccessControl: () -> ();
+  assignCallerUserRole: (user: principal, role: UserRole) -> ();
+  getAllSubmissions: () -> (vec SubmissionPublic) query;
+  getCallerUserRole: () -> (UserRole) query;
+  getCharges: () -> (vec Charge) query;
+  getMySubmission: (id: SubmissionId) -> (opt SubmissionPublic) query;
+  getMySubmissions: () -> (vec SubmissionPublic) query;
+  isCallerAdmin: () -> (bool) query;
+  submitProject: (req: SubmitRequest) -> (SubmissionId);
+  updateAdminNotes: (id: SubmissionId, notes: text) -> ();
+  updateSubmissionStatus: (id: SubmissionId, newStatus: SubmissionStatus) ->
+   ();
+}

@@ -1,0 +1,23 @@
+{
+  "overview": "A student project service website where students log in, submit their academic information, choose their project type (handwritten or typed/graduation), and track the status of their project from submission through to ready for pickup. The service owner manages all submissions and updates statuses via an admin dashboard.",
+  "features": [
+    "Student login via Internet Identity",
+    "Project submission form with academic info (name, roll no, enrollment number, teacher, principal, class)",
+    "Project type selection: 10th/12th handwritten OR graduation typed (PDF only or PDF+binding)",
+    "Submission status tracking: submitted, in progress, ready for pickup",
+    "Student dashboard with past submissions and status badges",
+    "Admin dashboard for service owner to manage and update submission statuses",
+    "Submission detail view with full academic info and status history",
+    "Admin search and filter by student name, status, or project type"
+  ],
+  "category": "productivity",
+  "tags": [
+    "student",
+    "project-management",
+    "academic",
+    "submission-tracking",
+    "school",
+    "college"
+  ],
+  "last_updated": "2026-05-11T04:06:03.344Z"
+}
