@@ -424,6 +424,37 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Floating WhatsApp Button */}
+      <a
+        href="https://wa.me/916395291264"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        data-ocid="whatsapp.contact_button"
+        className="group fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] whatsapp-pulse transition-all duration-300 hover:scale-105 hover:shadow-xl"
+        style={{ backgroundColor: "#25D366" }}
+      >
+        {/* Icon circle */}
+        <span
+          className="flex items-center justify-center w-14 h-14 rounded-full"
+          style={{ backgroundColor: "#25D366" }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 32 32"
+            className="w-7 h-7"
+            fill="white"
+            aria-hidden="true"
+          >
+            <path d="M16 2C8.268 2 2 8.268 2 16c0 2.492.658 4.832 1.809 6.853L2 30l7.38-1.784A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5a11.44 11.44 0 01-5.837-1.603l-.418-.247-4.38 1.058 1.1-4.261-.273-.437A11.46 11.46 0 014.5 16c0-6.351 5.149-11.5 11.5-11.5S27.5 9.649 27.5 16 22.351 27.5 16 27.5zm6.3-8.617c-.346-.173-2.046-1.01-2.363-1.126-.317-.115-.548-.173-.778.173-.23.347-.893 1.126-1.095 1.358-.202.23-.404.26-.75.086-.346-.173-1.46-.538-2.781-1.715-1.028-.916-1.722-2.047-1.924-2.393-.202-.347-.022-.534.152-.707.156-.155.346-.404.52-.606.173-.202.23-.347.346-.578.115-.231.057-.433-.029-.606-.086-.173-.778-1.875-1.066-2.567-.28-.674-.567-.583-.778-.594l-.663-.011c-.23 0-.606.086-.924.433-.317.347-1.21 1.183-1.21 2.884s1.239 3.345 1.412 3.577c.173.23 2.437 3.72 5.904 5.216.826.357 1.47.57 1.972.73.829.264 1.584.226 2.18.137.665-.1 2.046-.836 2.335-1.643.288-.808.288-1.5.202-1.643-.086-.144-.317-.23-.663-.404z" />
+          </svg>
+        </span>
+        {/* Tooltip label */}
+        <span className="pr-4 pl-1 text-sm font-semibold text-white whitespace-nowrap max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 ease-in-out">
+          Chat on WhatsApp
+        </span>
+      </a>
+
       {/* CTA Banner */}
       <section className="bg-background py-16">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
